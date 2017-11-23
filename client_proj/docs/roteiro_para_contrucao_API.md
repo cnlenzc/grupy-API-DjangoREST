@@ -138,7 +138,7 @@ select * from pythonista_pythonista;
 Arquivo pythonista/urls.py
 ```
 from django.conf.urls import url
-from client_app import views
+from pythonista import views
 
 urlpatterns = [
     url(r'^$', views.index),
