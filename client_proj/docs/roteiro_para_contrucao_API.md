@@ -4,7 +4,7 @@
 ```
 $ mkdir pythonista_api
 $ cd pythonista_api
-$ virtualenv —python=python3 env
+$ virtualenv --python=python3 env
 $ source env/bin/activate
 ```
 
@@ -50,11 +50,12 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse("Olá Pytonistas! Bem vindo ao Grupy!")
+```
 
 
-Adicione a view na lista de url do app
+#### Adicione a view na lista de url do app
 Arquivo pythonista/urls.py
-———————————————————
+```
 from django.conf.urls import url
 
 from . import views
@@ -137,11 +138,12 @@ select * from pythonista_pythonista;
 Arquivo pythonista/urls.py
 ```
 from django.conf.urls import url
-from pythonista import views
+from client_app import views
 
 urlpatterns = [
     url(r'^$', views.index),
     url(r'^pythonista/$', views.PythonistaList.as_view()),
+    url(r'^pythonista/(?P<pk>[0-9]+)/$', views.PythonistaDetail.as_view()),
 ]
 ```
 
